@@ -1,6 +1,3 @@
-// Author: Diogo Nunes Batista
-// LastEdit: Diogo Nunes Batista - 15/08/2023
-
 import 'package:flutter/material.dart';
 import 'package:seuamigodasaude/ui/PostoProx/PostoProx.dart';
 import 'package:seuamigodasaude/ui/lembrete/Lembrete.dart';
@@ -17,7 +14,7 @@ class MainMenu extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-      return MaterialApp(
+      return const MaterialApp(
         home: Scaffold(
           // Definindo um gradiente linear no plano de fundo
           body: MainMenu(),
@@ -26,27 +23,27 @@ class MainMenu extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 2, 74, 133),
+      backgroundColor: const Color.fromARGB(255, 2, 74, 133),
       resizeToAvoidBottomInset: false,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
             Color.fromARGB(255, 0, 102, 235), // tela de fundo
-            Color.fromARGB(255, 223, 223, 235)
+            Color.fromARGB(255, 133, 100, 138)
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(
-              50,
+            padding: const EdgeInsets.fromLTRB(
+              15,
               0,
-              50,
+              15,
               50,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(children: [
+                const Column(children: [
                   Icon(Icons.local_hospital_outlined,
                       size: 80, color: Color.fromARGB(255, 255, 255, 255)),
                   //colocar borda no icone
@@ -70,7 +67,7 @@ class MainMenu extends StatelessWidget {
                     children: menuOptions,
                   ),
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 _buildBottomOptions(context),
               ],
             ),
@@ -84,7 +81,7 @@ class MainMenu extends StatelessWidget {
 List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   return [
     // Lista de opções para gestores
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 10), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Saúde Local',
         icon: Icons.health_and_safety_outlined,
@@ -109,7 +106,7 @@ List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
     _buildMenuOption(
         text: 'Socorro Rápido', icon: Icons.run_circle_sharp, 
         onPressed: () {}),
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed: () {}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
@@ -124,8 +121,6 @@ List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   ];
 }
 
-// ...
-
 // retorna um botão para ser usado no menu
 Widget _buildMenuOption(
     {required String text,
@@ -137,8 +132,8 @@ Widget _buildMenuOption(
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        textStyle: TextStyle(fontSize: 33, shadows: [Shadow()]),
-        backgroundColor: Color.fromARGB(255, 34, 45, 97),
+        textStyle: const TextStyle(fontSize: 35, shadows: [Shadow()]),
+        backgroundColor: const Color.fromARGB(255, 34, 45, 97),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         visualDensity: VisualDensity.compact,
         padding: const EdgeInsets.all(10),
@@ -161,43 +156,70 @@ Widget _buildMenuOption(
 
 // retorna os widgets localizados na parte inferior do menu
 Widget _buildBottomOptions(BuildContext context) {
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(
+            'Precisa de ajuda?',
+            style: TextStyle(fontSize: 25),
+          ),
+          content: const Text(
+              'LEMBRANDO: \nPara acessar mais informações sobre um botão pressione uma vez sobre ele; \nPara executar a funcionalidade do botão, clique uma segunda vez nele.',
+              style: TextStyle(fontSize: 25)),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Fecha a tela pop-up
+              },
+              child: const Text('Fechar Caixa de Ajuda'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   return Row(
     children: [
       ElevatedButton(
-        onPressed: () {},
-        child: Icon(
+        onPressed: () {
+          _showPopup(context);
+        },
+        style: ElevatedButton.styleFrom(
+          elevation: 5,
+          backgroundColor: const Color.fromARGB(255, 34, 45, 97),
+          shape: const CircleBorder(),
+          padding: const EdgeInsets.all(8),
+        ),
+        child: const Icon(
           Icons.question_mark_rounded,
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
         ),
-        style: ElevatedButton.styleFrom(
-          elevation: 5,
-          backgroundColor: Color.fromARGB(255, 34, 45, 97),
-          shape: const CircleBorder(),
-          padding: const EdgeInsets.all(8),
-        ),
       ),
-      Expanded(
+      const Expanded(
         child: Text("",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 25,
-              color: const Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 255, 255, 255),
               overflow: TextOverflow.fade,
             )),
       ),
       ElevatedButton(
         onPressed: () {},
-        child: Icon(
+        style: ElevatedButton.styleFrom(
+          elevation: 5,
+          backgroundColor: const Color.fromARGB(255, 34, 45, 97),
+          shape: const CircleBorder(),
+          padding: const EdgeInsets.all(8),
+        ),
+        child: const Icon(
           Icons.close,
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
-        ),
-        style: ElevatedButton.styleFrom(
-          elevation: 5,
-          backgroundColor: Color.fromARGB(255, 34, 45, 97),
-          shape: const CircleBorder(),
-          padding: const EdgeInsets.all(8),
         ),
       ),
     ],

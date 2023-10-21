@@ -199,6 +199,22 @@ class _LembreteStatefulState extends State<LembreteStateful> {
       ),
       child: Column(
         children: [
+          IconButton(
+            padding: EdgeInsets.all(5),
+            icon: Icon(
+              Icons.cancel,
+              color: Color.fromARGB(255, 247, 16, 0),
+            ),
+            onPressed: () {
+              setState(() {
+                lembretes.removeAt(index);
+                cards = [];
+                for (int i = 0; i < lembretes.length; i++) {
+                  cards.add(_lembreteCard(context, i));
+                }
+              });
+            },
+          ),
           SizedBox(
             width: double.infinity,
             height: 80,
