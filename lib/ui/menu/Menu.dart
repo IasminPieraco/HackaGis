@@ -2,6 +2,8 @@
 // LastEdit: Diogo Nunes Batista - 15/08/2023
 
 import 'package:flutter/material.dart';
+import 'package:seuamigodasaude/ui/PostoProx/PostoProx.dart';
+import 'package:seuamigodasaude/ui/lembrete/Lembrete.dart';
 
 /// Tela de menu principal
 class MainMenu extends StatelessWidget {
@@ -28,8 +30,8 @@ class MainMenu extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-           Color.fromARGB(255, 0, 102, 235),     // tela de fundo
-            Color.fromARGB(255, 223, 223, 235 )
+            Color.fromARGB(255, 0, 102, 235), // tela de fundo
+            Color.fromARGB(255, 223, 223, 235)
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
@@ -45,16 +47,20 @@ class MainMenu extends StatelessWidget {
               children: [
                 Column(children: [
                   Icon(Icons.local_hospital_outlined,
-                      size: 80, color: Color.fromARGB(255, 255, 255, 255)),      
-                      //colocar borda no icone                               
-                      
+                      size: 80, color: Color.fromARGB(255, 255, 255, 255)),
+                  //colocar borda no icone
+
                   Text(
                     'Seu Amigo da Saúde',
                     style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        shadows: [Shadow(color: Color.fromARGB(255, 163, 194, 219), blurRadius: 10)]),
+                        shadows: [
+                          Shadow(
+                              color: Color.fromARGB(255, 163, 194, 219),
+                              blurRadius: 10)
+                        ]),
                   ),
                   SizedBox(height: 10),
                 ]),
@@ -77,22 +83,32 @@ class MainMenu extends StatelessWidget {
 List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   return [
     // Lista de opções para gestores
-    SizedBox(height: 10), // Reduzimos a altura de 100 para 20
+    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Saúde Local',
         icon: Icons.health_and_safety_outlined,
-        onPressed: () {}),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const PostoProxStateful(),
+                settings: const RouteSettings(name: '/saude'),
+              ));
+        }),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'Remediário', icon: Icons.local_pharmacy_rounded, onPressed: () {}),
+        text: 'Remediário',
+        icon: Icons.local_pharmacy_rounded,
+        onPressed: () {Navigator.push(context, MaterialPageRoute<void>(
+          builder: (BuildContext context) => const LembreteStateful(),
+          settings: const RouteSettings(name: '/lembrete'),
+        ));}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'Socorro Rápido',
-        icon: Icons.run_circle_sharp,
-        onPressed: () {}),
+        text: 'Socorro Rápido', icon: Icons.run_circle_sharp, onPressed: () {}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed:  () {}),
+        text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed: () {}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Jogueterapia', icon: Icons.gamepad_outlined, onPressed: () {}),
@@ -112,7 +128,7 @@ Widget _buildMenuOption(
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        textStyle: TextStyle(fontSize: 35, shadows: [Shadow()]),
+        textStyle: TextStyle(fontSize: 33, shadows: [Shadow()]),
         backgroundColor: Color.fromARGB(255, 34, 45, 97),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         visualDensity: VisualDensity.compact,
@@ -147,7 +163,7 @@ Widget _buildBottomOptions(BuildContext context) {
         ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
-          backgroundColor:  Color.fromARGB(255, 34, 45, 97),
+          backgroundColor: Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
         ),
@@ -170,7 +186,7 @@ Widget _buildBottomOptions(BuildContext context) {
         ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
-          backgroundColor:  Color.fromARGB(255, 34, 45, 97),
+          backgroundColor: Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
         ),

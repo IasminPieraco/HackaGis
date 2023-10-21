@@ -85,8 +85,8 @@ class _LembreteStatefulState extends State<LembreteStateful> {
   }
 Widget _lembreteCard(BuildContext context, int index) {
   return Card(
-    margin: EdgeInsets.only(top: 45),
-    color: Color.fromARGB(255, 32, 41, 88),
+    margin: const EdgeInsets.only(top: 45),
+    color: const Color.fromARGB(255, 32, 41, 88),
     elevation: 5.0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(40.0),
@@ -94,8 +94,8 @@ Widget _lembreteCard(BuildContext context, int index) {
       child: Column(
       children: [
         IconButton(
-          padding: EdgeInsets.all(5), 
-          icon: Icon(
+          padding: const EdgeInsets.all(5), 
+          icon: const Icon(
             Icons.cancel,
             color: Color.fromARGB(255, 247, 16, 0),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:seuamigodasaude/ui/menu/Menu.dart';
 import 'ui/lembrete/Lembrete.dart';
 
 void main() async{
@@ -12,7 +13,7 @@ void main() async{
   ]) //Força a utilização do modo retrato sempre
       .then((_) {
     runApp(MaterialApp(
-      home: const LembreteStateful(),
+      home: const MainMenu(),
       theme: ThemeData(
           primaryColor: Color.fromARGB(255, 255, 255, 255),
           colorScheme: const ColorScheme(
