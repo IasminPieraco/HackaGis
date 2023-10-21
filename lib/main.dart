@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:seuamigodasaude/ui/menu/Menu.dart';
 import 'ui/lembrete/Lembrete.dart';
-
+import 'ui/miniGame/miniGame.dart';
 void main() async{
 
   //carregaAluno();
