@@ -1,6 +1,3 @@
-// Author: Diogo Nunes Batista
-// LastEdit: Diogo Nunes Batista - 15/08/2023
-
 import 'package:flutter/material.dart';
 
 /// Tela de menu principal
@@ -103,8 +100,6 @@ List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   ];
 }
 
-// ...
-
 // retorna um botão para ser usado no menu
 Widget _buildMenuOption(
     {required String text,
@@ -171,16 +166,16 @@ Widget _buildBottomOptions(BuildContext context) {
         onPressed: () {
           _showPopup(context);
         },
-        child: const Icon(
-          Icons.question_mark_rounded,
-          color: Color.fromARGB(255, 255, 255, 255),
-          size: 40,
-        ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
           backgroundColor: const Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
+        ),
+        child: const Icon(
+          Icons.question_mark_rounded,
+          color: Color.fromARGB(255, 255, 255, 255),
+          size: 40,
         ),
       ),
       const Expanded(
@@ -194,16 +189,16 @@ Widget _buildBottomOptions(BuildContext context) {
       ),
       ElevatedButton(
         onPressed: () {},
-        child: const Icon(
-          Icons.close,
-          color: Color.fromARGB(255, 255, 255, 255),
-          size: 40,
-        ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
           backgroundColor: const Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
+        ),
+        child: const Icon(
+          Icons.close,
+          color: Color.fromARGB(255, 255, 255, 255),
+          size: 40,
         ),
       ),
     ],
