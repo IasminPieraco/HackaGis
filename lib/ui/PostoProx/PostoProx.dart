@@ -107,7 +107,6 @@ class _PostoProxStatefulState extends State<PostoProxStateful> {
             colors: [
               Color.fromARGB(255, 0, 102, 235), // tela de fundo
               Color.fromARGB(255, 133, 100, 138)
-
             ],
           ),
         ),
