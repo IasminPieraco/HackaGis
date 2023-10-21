@@ -28,7 +28,7 @@ class MainMenu extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-           Color.fromARGB(255, 0, 102, 235),
+           Color.fromARGB(255, 0, 102, 235),     // tela de fundo
             Color.fromARGB(255, 223, 223, 235 )
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
