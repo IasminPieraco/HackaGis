@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
 
+  
+
   @override
   Widget build(BuildContext context) {
     // cria as opções com base se é ou não um usuário gestor
@@ -140,10 +142,33 @@ Widget _buildMenuOption(
 
 // retorna os widgets localizados na parte inferior do menu
 Widget _buildBottomOptions(BuildContext context) {
+
+  void _showPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Precisa de ajuda?'),
+          content: Text('LEMBRANDO: Para acessar mais informações sobre um botão pressione uma vez sobre ele; Para executar a funcionalidade do botão, clique uma segunda vez.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Fecha a tela pop-up
+              },
+              child: Text('Fechar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   return Row(
     children: [
       ElevatedButton(
-        onPressed: () {},
+        onPressed: (){
+          _showPopup(context);
+        },
         child: const Icon(
           Icons.question_mark_rounded,
           color: Color.fromARGB(255, 255, 255, 255),
