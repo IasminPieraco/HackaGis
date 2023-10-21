@@ -14,7 +14,20 @@ class MeuContainerPersonalizado extends State<miniGame> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
-      body: Center(
+      body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+              Color.fromARGB(255, 0, 102, 235), // tela de fundo
+              Color.fromARGB(255, 133, 100, 138),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.center, // Alinhe a Column ao centro vertical
           crossAxisAlignment:
@@ -308,6 +321,7 @@ class MeuContainerPersonalizado extends State<miniGame> {
                 ])
           ],
         ),
+      ),
       ),
     );
   }

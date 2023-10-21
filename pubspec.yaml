@@ -25,11 +25,9 @@ dependency_overrides:
             # ref: main (custom branch/commit)
 flutter:
   assets:
-    - lib/assets/
+    - images/
   uses-material-design: true
 
-assets: 
-  - lib/assets
   
 
 

@@ -32,10 +32,13 @@ class _ContatosStatefulState extends State<ContatosStateful> {
                 Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.arrow_back, size: 40,),
+                      icon: Icon(
+                        Icons.arrow_back,
+                        size: 40,
+                      ),
                       color: Colors.white,
                       onPressed: () {
-                        // Lógica para voltar à tela anterior
+                        Navigator.pop(context);
                       },
                     ),
                     SizedBox(width: 10),
@@ -70,11 +73,10 @@ class _ContatosStatefulState extends State<ContatosStateful> {
                     // Lógica para o botão de confirmar
                   },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 100, vertical: 10),
+                    padding: const EdgeInsets.fromLTRB(70,30,70,30),
                     child: Text(
                       "Confirmar",
-                      style: TextStyle(fontSize: 17.5),
+                      style: TextStyle(fontSize: 15),
                     ),
                   ),
                   style: ElevatedButton.styleFrom(

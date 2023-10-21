@@ -36,8 +36,8 @@ class _LembreteStatefulState extends State<LembreteStateful> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 0, 102, 235),
-                  Color.fromARGB(255, 191, 191, 206),
+              Color.fromARGB(255, 0, 102, 235), // tela de fundo
+              Color.fromARGB(255, 133, 100, 138),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -199,22 +199,6 @@ class _LembreteStatefulState extends State<LembreteStateful> {
       ),
       child: Column(
         children: [
-          IconButton(
-            padding: EdgeInsets.all(5),
-            icon: Icon(
-              Icons.cancel,
-              color: Color.fromARGB(255, 247, 16, 0),
-            ),
-            onPressed: () {
-              setState(() {
-                lembretes.removeAt(index);
-                cards = [];
-                for (int i = 0; i < lembretes.length; i++) {
-                  cards.add(_lembreteCard(context, i));
-                }
-              });
-            },
-          ),
           SizedBox(
             width: double.infinity,
             height: 80,

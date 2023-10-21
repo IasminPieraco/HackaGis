@@ -126,8 +126,8 @@ class _newLembreteStatefulState extends State<newLembreteStateful> {
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Color.fromARGB(255, 0, 102, 235),
-                  Color.fromARGB(255, 191, 191, 206),
+              Color.fromARGB(255, 0, 102, 235), // tela de fundo
+              Color.fromARGB(255, 133, 100, 138),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -167,24 +167,33 @@ class _newLembreteStatefulState extends State<newLembreteStateful> {
                   child: Container(
                       child: Column(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width - 20,
-                        height: 100,
-                        child: TextFormField(
-                          cursorColor: Colors.black,
-                          textAlign: TextAlign.center,
-                          controller: _NameController,
-                          decoration: const InputDecoration(
-                              labelText: 'Nome do lembrete',
-                              focusColor: Colors.black,
-                              hoverColor: Colors.black,
-                              fillColor: Colors.black,
-                              labelStyle: TextStyle(color: Colors.black)),
-                          style: const TextStyle(
-                            fontSize: 32.0,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            "Nome do rémedio:",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(color: Colors.black, fontSize: 30),
                           ),
+                          const SizedBox(
+                            width: 15.0,
+                          ),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              elevation: 5,
+                              backgroundColor: Color.fromARGB(255, 72, 0, 88),
+                              shape: const CircleBorder(),
+                              padding: const EdgeInsets.all(8),
+                            ),
+                            child: const Icon(
+                              Icons.mic,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              size: 40,
+                            ),
+                          ),
+                        ],
                         ),
-                      ),
                       const SizedBox(
                         height: 100.0,
                       ),

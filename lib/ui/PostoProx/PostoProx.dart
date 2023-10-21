@@ -120,17 +120,20 @@ class _PostoProxStatefulState extends State<PostoProxStateful> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const SizedBox(
+              SizedBox(
                 height: 80,
                 width: 380,
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child: Icon(
+                  child: IconButton(
+                    onPressed: () {Navigator.pop(context);}, 
+                    icon: const Icon(
                     Icons.arrow_back_ios,
                     color: Colors.white,
                     size: 50,
                     textDirection: TextDirection.ltr,
-                  ),
+                  ),)
+                  
                 ),
               ),
               Text(
