@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:seuamigodasaude/ui/PostoProx/PostoProx.dart';
 import 'package:seuamigodasaude/ui/lembrete/Lembrete.dart';
@@ -44,6 +46,7 @@ class MainMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Column(children: [
+                  SizedBox(height: 50,),
                   Icon(Icons.local_hospital_outlined,
                       size: 80, color: Color.fromARGB(255, 255, 255, 255)),
                   //colocar borda no icone
@@ -81,7 +84,7 @@ class MainMenu extends StatelessWidget {
 List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   return [
     // Lista de opções para gestores
-    const SizedBox(height: 10), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 20), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Saúde Local',
         icon: Icons.health_and_safety_outlined,
@@ -209,7 +212,7 @@ Widget _buildBottomOptions(BuildContext context) {
             )),
       ),
       ElevatedButton(
-        onPressed: () {},
+        onPressed: () {exit(0);},
         style: ElevatedButton.styleFrom(
           elevation: 5,
           backgroundColor: const Color.fromARGB(255, 34, 45, 97),

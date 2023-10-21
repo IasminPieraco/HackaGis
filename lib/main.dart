@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'ui/PostoProx/PostoProx.dart';
+import 'ui/Contatos/contatos.dart';
 
 import 'package:seuamigodasaude/ui/menu/Menu.dart';
 import 'ui/lembrete/Lembrete.dart';
@@ -20,7 +22,7 @@ void main() async {
           colorScheme: const ColorScheme(
             brightness: Brightness.light,
             primary: Color.fromARGB(255, 255, 0, 0),
-            onPrimary: Colors.white,
+            onPrimary:Colors.white,
             secondary: Color(0xff62b0bc),
             onSecondary: Colors.white,
             error: Color.fromARGB(255, 255, 0, 0),
