@@ -14,7 +14,7 @@ class MainMenu extends StatelessWidget {
 
     @override
     Widget build(BuildContext context) {
-      return MaterialApp(
+      return const MaterialApp(
         home: Scaffold(
           // Definindo um gradiente linear no plano de fundo
           body: MainMenu(),
@@ -23,18 +23,18 @@ class MainMenu extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 2, 74, 133),
+      backgroundColor: const Color.fromARGB(255, 2, 74, 133),
       resizeToAvoidBottomInset: false,
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
-           Color.fromARGB(255, 0, 102, 235),     // tela de fundo
-            Color.fromARGB(255, 223, 223, 235 )
+            Color.fromARGB(255, 0, 102, 235), // tela de fundo
+            Color.fromARGB(255, 223, 223, 235)
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(
+            padding: const EdgeInsets.fromLTRB(
               50,
               0,
               50,
@@ -43,18 +43,22 @@ class MainMenu extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(children: [
+                const Column(children: [
                   Icon(Icons.local_hospital_outlined,
-                      size: 80, color: Color.fromARGB(255, 255, 255, 255)),      
-                      //colocar borda no icone                               
-                      
+                      size: 80, color: Color.fromARGB(255, 255, 255, 255)),
+                  //colocar borda no icone
+
                   Text(
                     'Seu Amigo da Saúde',
                     style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        shadows: [Shadow(color: Color.fromARGB(255, 163, 194, 219), blurRadius: 10)]),
+                        shadows: [
+                          Shadow(
+                              color: Color.fromARGB(255, 163, 194, 219),
+                              blurRadius: 10)
+                        ]),
                   ),
                   SizedBox(height: 10),
                 ]),
@@ -63,7 +67,7 @@ class MainMenu extends StatelessWidget {
                     children: menuOptions,
                   ),
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 _buildBottomOptions(context),
               ],
             ),
@@ -77,23 +81,23 @@ class MainMenu extends StatelessWidget {
 List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
   return [
     // Lista de opções para gestores
-    SizedBox(height: 10), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 10), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Saúde Local',
         icon: Icons.health_and_safety_outlined,
         onPressed: () {}),
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'Remediário', icon: Icons.local_pharmacy_rounded, onPressed: () {}),
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
-    _buildMenuOption(
-        text: 'Socorro Rápido',
-        icon: Icons.run_circle_sharp,
+        text: 'Remediário',
+        icon: Icons.local_pharmacy_rounded,
         onPressed: () {}),
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+    const SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed:  () {}),
-    SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+        text: 'Socorro Rápido', icon: Icons.run_circle_sharp, onPressed: () {}),
+    const SizedBox(height: 9), // Reduzimos a altura de 100 para 20
+    _buildMenuOption(
+        text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed: () {}),
+    const SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'Jogueterapia', icon: Icons.gamepad_outlined, onPressed: () {}),
   ];
@@ -112,8 +116,8 @@ Widget _buildMenuOption(
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 5,
-        textStyle: TextStyle(fontSize: 35, shadows: [Shadow()]),
-        backgroundColor: Color.fromARGB(255, 34, 45, 97),
+        textStyle: const TextStyle(fontSize: 35, shadows: [Shadow()]),
+        backgroundColor: const Color.fromARGB(255, 34, 45, 97),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         visualDensity: VisualDensity.compact,
         padding: const EdgeInsets.all(10),
@@ -140,37 +144,37 @@ Widget _buildBottomOptions(BuildContext context) {
     children: [
       ElevatedButton(
         onPressed: () {},
-        child: Icon(
+        child: const Icon(
           Icons.question_mark_rounded,
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
         ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
-          backgroundColor:  Color.fromARGB(255, 34, 45, 97),
+          backgroundColor: const Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
         ),
       ),
-      Expanded(
+      const Expanded(
         child: Text("",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 25,
-              color: const Color.fromARGB(255, 255, 255, 255),
+              color: Color.fromARGB(255, 255, 255, 255),
               overflow: TextOverflow.fade,
             )),
       ),
       ElevatedButton(
         onPressed: () {},
-        child: Icon(
+        child: const Icon(
           Icons.close,
           color: Color.fromARGB(255, 255, 255, 255),
           size: 40,
         ),
         style: ElevatedButton.styleFrom(
           elevation: 5,
-          backgroundColor:  Color.fromARGB(255, 34, 45, 97),
+          backgroundColor: const Color.fromARGB(255, 34, 45, 97),
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(8),
         ),

@@ -37,7 +37,8 @@ class _LembreteStatefulState extends State<LembreteStateful> {
                   icon: const Icon(Icons.arrow_back),
                   iconSize: 42,
                   onPressed: () {},
-                  tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                  tooltip:
+                      MaterialLocalizations.of(context).openAppDrawerTooltip,
                 );
               },
             ),
@@ -83,66 +84,68 @@ class _LembreteStatefulState extends State<LembreteStateful> {
       ),
     );
   }
-Widget _lembreteCard(BuildContext context, int index) {
-  return Card(
-    margin: EdgeInsets.only(top: 45),
-    color: Color.fromARGB(255, 32, 41, 88),
-    elevation: 5.0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(40.0),
-    ),
+
+  Widget _lembreteCard(BuildContext context, int index) {
+    return Card(
+      margin: EdgeInsets.only(top: 45),
+      color: Color.fromARGB(255, 32, 41, 88),
+      elevation: 5.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40.0),
+      ),
       child: Column(
-      children: [
-        IconButton(
-          padding: EdgeInsets.all(5), 
-          icon: Icon(
-            Icons.cancel,
-            color: Color.fromARGB(255, 247, 16, 0),
-          ),
+        children: [
+          IconButton(
+            padding: EdgeInsets.all(5),
+            icon: Icon(
+              Icons.cancel,
+              color: Color.fromARGB(255, 247, 16, 0),
+            ),
             onPressed: () {
-            setState(() {
-              lembretes.removeAt(index);
-              cards = [];
-              for (int i = 0; i < lembretes.length; i++) {
-                cards.add(_lembreteCard(context, i));
-              }
-            });
-          },
-        ),
-         SizedBox(
-          width: double.infinity,
-          height: 80,
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  lembretes[index].name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                    color: Color.fromARGB(255, 255, 255, 255),
+              setState(() {
+                lembretes.removeAt(index);
+                cards = [];
+                for (int i = 0; i < lembretes.length; i++) {
+                  cards.add(_lembreteCard(context, i));
+                }
+              });
+            },
+          ),
+          SizedBox(
+            width: double.infinity,
+            height: 80,
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    lembretes[index].name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 62,
-                ),
-                Text(
-                  DateFormat('kk:mm').format(lembretes[index].horario),
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 62,
-                    color: Color.fromARGB(255, 255, 255, 255),
+                  const SizedBox(
+                    width: 62,
                   ),
-                ),
-              ],
+                  Text(
+                    DateFormat('kk:mm').format(lembretes[index].horario),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 62,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
+
   void initLembretes() {
     lembretes.add(Infos());
     lembretes.add(Infos());

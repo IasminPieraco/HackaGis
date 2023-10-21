@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:seuamigodasaude/ui/PostoProx/PostoProx.dart';
+import 'package:seuamigodasaude/ui/menu/Menu.dart';
 import 'ui/lembrete/Lembrete.dart';
 import 'ui/miniGame/miniGame.dart';
-void main() async{
 
+void main() async {
   //carregaAluno();
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,9 +14,9 @@ void main() async{
   ]) //Força a utilização do modo retrato sempre
       .then((_) {
     runApp(MaterialApp(
-      home: const LembreteStateful(),
+      home: const MainMenu(),
       theme: ThemeData(
-          primaryColor: Color.fromARGB(255, 255, 255, 255),
+          primaryColor: const Color.fromARGB(255, 255, 255, 255),
           colorScheme: const ColorScheme(
             brightness: Brightness.light,
             primary: Color.fromARGB(255, 255, 0, 0),
@@ -31,7 +33,7 @@ void main() async{
           typography: Typography.material2018(),
           inputDecorationTheme: InputDecorationTheme(
             iconColor: const Color.fromARGB(255, 255, 255, 255),
-            focusColor: Color.fromARGB(255, 255, 255, 255),
+            focusColor: const Color.fromARGB(255, 255, 255, 255),
             labelStyle: const TextStyle(fontSize: 20.0, color: Colors.grey),
             border: OutlineInputBorder(
                 borderSide: const BorderSide(
@@ -61,5 +63,3 @@ void main() async{
     ));
   });
 }
-
-
