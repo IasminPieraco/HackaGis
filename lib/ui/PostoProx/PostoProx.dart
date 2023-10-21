@@ -134,7 +134,9 @@ class _PostoProxStatefulState extends State<PostoProxStateful> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontFamily: fontStyle,
-                    shadows: const [Shadow(color: Colors.black, blurRadius: 5)]),
+                    shadows: const [
+                      Shadow(color: Colors.black, blurRadius: 5)
+                    ]),
               ),
               const SizedBox(height: 50),
               SizedBox(
