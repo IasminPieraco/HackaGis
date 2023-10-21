@@ -32,7 +32,7 @@ void main() async{
           typography: Typography.material2018(),
           inputDecorationTheme: InputDecorationTheme(
             iconColor: const Color.fromARGB(255, 255, 255, 255),
-            focusColor: Color.fromARGB(255, 255, 255, 255),
+            focusColor: Colors.black,
             labelStyle: const TextStyle(fontSize: 20.0, color: Colors.grey),
             border: OutlineInputBorder(
                 borderSide: const BorderSide(

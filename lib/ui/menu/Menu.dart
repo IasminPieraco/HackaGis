@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:seuamigodasaude/ui/PostoProx/PostoProx.dart';
 import 'package:seuamigodasaude/ui/lembrete/Lembrete.dart';
+import 'package:seuamigodasaude/ui/miniGame/miniGame.dart';
 
 /// Tela de menu principal
 class MainMenu extends StatelessWidget {
@@ -99,19 +100,27 @@ List<Widget> _buildMenuOptionsList(BuildContext context, bool isManager) {
     _buildMenuOption(
         text: 'Remediário',
         icon: Icons.local_pharmacy_rounded,
-        onPressed: () {Navigator.push(context, MaterialPageRoute<void>(
-          builder: (BuildContext context) => const LembreteStateful(),
-          settings: const RouteSettings(name: '/lembrete'),
-        ));}),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LembreteStateful()));
+        }),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'Socorro Rápido', icon: Icons.run_circle_sharp, onPressed: () {}),
+        text: 'Socorro Rápido', icon: Icons.run_circle_sharp, 
+        onPressed: () {}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
         text: 'SaúdeAmigo', icon: Icons.people_alt, onPressed: () {}),
     SizedBox(height: 9), // Reduzimos a altura de 100 para 20
     _buildMenuOption(
-        text: 'Jogueterapia', icon: Icons.gamepad_outlined, onPressed: () {}),
+        text: 'Jogueterapia', icon: Icons.gamepad_outlined, 
+        onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const miniGame(),
+                settings: const RouteSettings(name: '/minigame'),
+              ));}),
   ];
 }
 

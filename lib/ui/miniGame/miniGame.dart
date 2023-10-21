@@ -21,7 +21,25 @@ class MeuContainerPersonalizado extends State<miniGame> {
               CrossAxisAlignment.center, // Alinhe a Column ao centro horizontal
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(top: 45.0, bottom: 25.0), // Margem no topo para o "Mini-game"
+              margin: const EdgeInsets.only(top: 45.0, bottom: 25.0),
+                  height: 80,
+                  width: 380,
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
+            Container(
+              margin: const EdgeInsets.only(bottom: 25.0), // Margem no topo para o "Mini-game"
               child: const Text(
                 'Mini-game',
                 style: TextStyle(
