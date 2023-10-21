@@ -14,7 +14,7 @@ void main() async {
   ]) //Força a utilização do modo retrato sempre
       .then((_) {
     runApp(MaterialApp(
-      home: const PostoProxStateful(),
+      home: const MainMenu(),
       theme: ThemeData(
           primaryColor: const Color.fromARGB(255, 255, 255, 255),
           colorScheme: const ColorScheme(

@@ -26,15 +26,15 @@ class MainMenu extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(colors: [
             Color.fromARGB(255, 0, 102, 235), // tela de fundo
-            Color.fromARGB(255, 223, 223, 235)
+            Color.fromARGB(255, 133, 100, 138)
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(
-              50,
+              15,
               0,
-              50,
+              15,
               50,
             ),
             child: Column(
